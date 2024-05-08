@@ -12,6 +12,7 @@ function Education() {
                 <p></p>
             </div>
         </div>
+        <iframe src='https://xyz-online-store-iq2a.vercel.app/' className='col-span-full' width='100%' height="600px"/>
     </div>
   )
 }
