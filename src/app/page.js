@@ -6,10 +6,10 @@ import Skills from "../../components/Skills";
 export default function Home() {
   return (
     <main className="p-7">
-      <Hero />
-      <Education />
-      <Experience />
-      <Skills />
+      <Hero/>
+      <Education/>
+      <Experience className="my-44"/>
+      <Skills/>
     </main>
   );
 }

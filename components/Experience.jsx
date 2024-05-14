@@ -1,13 +1,18 @@
 "use client";
-import React from "react";
+import React, { createRef } from "react";
 import Link from "next/link";
-import { useState } from "react";
+import { useScroll, motion } from "framer-motion";
 
-function Experience() {
-  const [xyzDetails, setXYZDetails] = useState(false);
-  const [photographyDetails, setPhotographyDetails] = useState(false);
+export default function Experience() {
+  const ref = createRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref.current,
+    offset: [0, 0.2],
+  });
   return (
-    <div
+    <motion.div
+      ref={ref}
+      style={{ opacity: scrollYProgress }}
       id="experience"
       className="text-center text-black grid bg-white pt-24 sm:pt-40 justify-center items-center"
     >
@@ -131,8 +136,6 @@ function Experience() {
           </Link>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
-
-export default Experience;
