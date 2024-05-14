@@ -7,7 +7,7 @@ export default function Experience() {
   const ref = createRef(null);
   const { scrollYProgress } = useScroll({
     target: ref.current,
-    offset: [0, 0.2],
+    offset: [0.01, 0.3],
   });
   return (
     <motion.div

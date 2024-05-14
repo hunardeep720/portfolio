@@ -3,7 +3,7 @@ import Link from "next/link";
 
 function Navbar() {
   return (
-    <div className="bg-white max-w-screen-2xl mx-auto text-black fixed top-0 left-0 right-0 bottom-0 grid grid-cols-4 text-center items-center h-16 sm:h-36 gap-2">
+    <div className="bg-white max-w-screen-2xl mx-auto text-black fixed top-0 left-0 right-0 bottom-0 grid grid-cols-4 text-center items-center h-16 sm:h-36 gap-2 z-10">
       <div>
         <Link href="/#home">
           <p className="font-extrabold text-lg sm:text-4xl hover:text-slate-500">Home</p>
