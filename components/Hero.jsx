@@ -10,7 +10,7 @@ export default function Hero() {
     >
       <div className="flex justify-center items-center text-center rounded-full sm:h-56 sm:w-56 border-5 mx-auto h-44 w-44 mb-10">
       <Image
-          src="/profile/IMG_1964.png"
+          src="/profile/IMG_1968.jpeg"
           alt="Hunardeep Singh"
           width={150}
           height={150}
