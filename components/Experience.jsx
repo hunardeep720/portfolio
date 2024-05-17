@@ -2,6 +2,7 @@
 import React, { createRef } from "react";
 import Link from "next/link";
 import { useScroll, motion } from "framer-motion";
+import GitHubSection from "./GithubSection";
 
 export default function Experience() {
   const ref = createRef(null);
@@ -14,7 +15,7 @@ export default function Experience() {
       ref={ref}
       style={{ opacity: scrollYProgress }}
       id="experience"
-      className="text-center text-black grid bg-white pt-24 sm:pt-40 justify-center items-center"
+      className="text-center bg-black grid text-white pt-24 sm:pt-40 justify-center items-center"
     >
       <p className="text-3xl font-extrabold border-black border-b-2 mx-auto mb-16">
         Experience
@@ -136,6 +137,7 @@ export default function Experience() {
           </Link>
         </div>
       </div>
+      <GitHubSection />
     </motion.div>
   );
 }

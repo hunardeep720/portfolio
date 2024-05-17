@@ -3,10 +3,10 @@ import React, { useState, createRef } from "react";
 import { useScroll, motion } from "framer-motion";
 
 function Skills({ front, back }) {
-  const [frontierBg, setFrontierBg] = useState("black");
-  const [frontierTxt, setFrontierTxt] = useState("white");
-  const [backendBg, setBackendBg] = useState("white");
-  const [backendTxt, setBackendTxt] = useState("black");
+  const [frontierBg, setFrontierBg] = useState("white");
+  const [frontierTxt, setFrontierTxt] = useState("black");
+  const [backendBg, setBackendBg] = useState("black");
+  const [backendTxt, setBackendTxt] = useState("white");
   const [frontier, setFrontier] = useState(true);
   const ref2 = createRef(null);
   const { scrollYProgress } = useScroll({
@@ -19,7 +19,7 @@ function Skills({ front, back }) {
         ref={ref2}
         style={{ opacity: scrollYProgress }}
         id="skills"
-        className="text-center text-black grid px-6 bg-white pt-24 sm:pt-40 justify-center items-center"
+        className="text-center bg-black grid px-6 text-white pt-24 sm:pt-40 justify-center items-center"
       >
         <p className="text-3xl font-extrabold border-black border-b-2 mx-auto mb-10">
           Skills
@@ -31,10 +31,10 @@ function Skills({ front, back }) {
               color: `${frontierTxt}`,
             }}
             onClick={() => {
-              setBackendBg("white");
-              setBackendTxt("black");
-              setFrontierTxt("white");
-              setFrontierBg("black");
+              setBackendBg("black");
+              setBackendTxt("white");
+              setFrontierTxt("black");
+              setFrontierBg("white");
               setFrontier(true);
             }}
             className="cursor-pointer p-3 sm:px-32 text-2xl font-bold"
@@ -44,10 +44,10 @@ function Skills({ front, back }) {
           <p
             style={{ backgroundColor: `${backendBg}`, color: `${backendTxt}` }}
             onClick={() => {
-              setFrontierBg("white");
-              setFrontierTxt("black");
-              setBackendBg("black");
-              setBackendTxt("white");
+              setFrontierBg("black");
+              setFrontierTxt("white");
+              setBackendBg("white");
+              setBackendTxt("black");
               setFrontier(false);
             }}
             className="cursor-pointer p-3 sm:px-32 text-2xl font-bold"
