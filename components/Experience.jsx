@@ -26,7 +26,7 @@ export default function Experience() {
             src="https://xyz-online-store-iq2a.vercel.app/"
             width="100%"
             height="500px"
-            className="border-0 overflow-scroll block col-span-1 sm:h-full"
+            className="border-0 overflow-scroll block col-span-1 sm:h-full z-0"
           />
           <div className="text-start">
             <p className="text-4xl p-3 font-extrabold 2xl:text-6xl">
@@ -81,7 +81,7 @@ export default function Experience() {
           <Link
             href="https://xyz-online-store-iq2a.vercel.app/"
             target="_blank"
-            className="p-4 m-2 border w-1/2 mx-auto bg-black col-span-full hover:text-black hover:bg-white hover:border-0 text-white rounded-lg font-bold"
+            className="p-4 m-2 border w-1/2 mx-auto bg-black col-span-full hover:text-black hover:bg-white hover:border-0 text-white rounded-lg font-bold z-10"
           >
             Visit
           </Link>
@@ -91,7 +91,7 @@ export default function Experience() {
             src="https://photograpy-pied.vercel.app/"
             width="100%"
             height="500px"
-            className="border-0 overflow-scroll block col-span-1 sm:h-full"
+            className="border-0 overflow-scroll block col-span-1 sm:h-full z-0"
           />
           <div className="text-start">
             <p className="text-4xl p-3 font-extrabold 2xl:text-6xl">Capture</p>
@@ -131,7 +131,7 @@ export default function Experience() {
           <Link
             href="https://photograpy-pied.vercel.app/"
             target="_blank"
-            className="p-4 m-2 border w-1/2 mx-auto bg-black col-span-full hover:text-black hover:bg-white hover:border-0 text-white rounded-lg font-bold"
+            className="p-4 m-2 border w-1/2 mx-auto bg-black col-span-full hover:text-black hover:bg-white hover:border-0 text-white rounded-lg font-bold z-10"
           >
             Visit
           </Link>
