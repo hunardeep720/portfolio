@@ -8,18 +8,8 @@ export default function Hero() {
       id="home"
       className=" max-w-screen-xl mx-auto m-10 grid grid-cols-1 sm:grid-cols-2 gap-5 text-white bg-black pt-24 sm:pt-40 items-center justify-center text-center"
     >
-      <div className="flex justify-center items-center text-center rounded-full sm:h-56 sm:w-56 border-5 mx-auto h-44 w-44 mb-10">
-      <Image
-          src="/profile/IMG_1968.jpeg"
-          alt="Hunardeep Singh"
-          width={150}
-          height={150}
-          className="rounded-full"
-          layout="responsive"
-          //objectFit="fit"
-        />
-      </div>
-      <div className="text-center grid items-center justify-center w-full">
+      
+      <div className="text-center grid items-center justify-center w-full col-span-full">
         <h1 className="text-2xl font-extrabold sm:text-4xl text-center text-cyan-300">
           Hi, I'm Hunardeep Singh
         </h1>
@@ -28,7 +18,9 @@ export default function Hero() {
         </p>
         <div className="mt-8 col-span-full flex flex-col">
           <Link href={`tel:8254888028`}>
-            <p className="font-semibold text-blue-500 hover:text-slate-400">(825)-488-8028</p>
+            <p className="font-semibold text-blue-500 hover:text-slate-400">
+              (825)-488-8028
+            </p>
           </Link>
           <Link
             href={`mailto:dhillonhunar@gmail.com`}
