@@ -10,8 +10,8 @@ export default function Experience() {
     target: ref.current,
     offset: [0.01, 0.3],
   });
-  const mediaQuery = window.matchMedia('(max-width: 1111px)');
-  useEffect(() => {console.log(mediaQuery.matches)}, [mediaQuery]);
+  let mediaQuery = false;
+  useEffect(() => {mediaQuery = window.matchMedia('(max-width: 1111px)');}, []);
   return (
     <div className="max-w-screen-xl mx-auto sm:ml-28 m-4">
       <motion.div
