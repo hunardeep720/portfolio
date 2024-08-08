@@ -10,7 +10,7 @@ export default function Home() {
     <main className="p-7 px-5">
       <Hero/>
       <Education/>
-      <Experience className="my-44"/>
+      <Experience className="my-44 m-10 ml-28"/>
       <Skills front={front} back={back}/>
       <div className="h-44"></div>
     </main>
