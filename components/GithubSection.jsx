@@ -10,7 +10,7 @@ export default function GitHubSection() {
   useEffect(() => {
     fetch('https://api.github.com/users/hunardeep720/repos')
       .then(response => response.json())
-      .then(info => {data.current = info; setRepos(info.slice(0, 4));});
+      .then(info => {data.current = info; setRepos(info.slice(-4));});
   }, []);
   const ButtonFunctions = () => {
     if (buttonOPtions === "More") {
@@ -23,8 +23,8 @@ export default function GitHubSection() {
   };
 
   return (
-    <div className="max-w-screen-xl mx-auto m-10 bg-black text-white pt-24 sm:pt-40">
-      <h2 className="text-2xl font-extrabold sm:text-4xl text-center">
+    <div className="max-w-screen-xl mx-auto m-10 bg-black text-white pt-24 sm:pt-40 w-full">
+      <h2 className="text-2xl font-extrabold sm:text-4xl">
         My GitHub Repositories
       </h2>
       <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-5 text-center 2xl:grid-cols-3">

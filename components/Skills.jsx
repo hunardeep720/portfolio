@@ -19,9 +19,9 @@ function Skills({ front, back }) {
         ref={ref2}
         style={{ opacity: scrollYProgress }}
         id="skills"
-        className="text-center bg-black grid px-6 text-white pt-24 sm:pt-40 justify-center items-center"
+        className="bg-black grid px-6 text-white pt-24 sm:pt-40"
       >
-        <p className="text-3xl font-extrabold border-black border-b-2 mx-auto mb-10">
+        <p className="text-3xl font-extrabold border-black border-b-2 mb-10 w-full">
           Skills
         </p>
         <div className="grid grid-cols-2">
