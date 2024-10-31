@@ -1,7 +1,8 @@
 import Hero from "../../components/Hero";
 import Education from "../../components/Education";
-import Experience from "../../components/Experience";
+import Projects from "../../components/Projects";
 import Skills from "../../components/Skills";
+import Experience from "../../components/Experience";
 
 export default function Home() {
   const front =[{name: "HTML", year: 2023}, {name: "CSS", year: 2023}, {name: "JavaScript", year: 2023}, {name: "React.js", year: 2024}, {name: "Next.js", year: 2024}, {name: "React-native", year: 2024}];
@@ -10,7 +11,8 @@ export default function Home() {
     <main className="p-7 px-5">
       <Hero/>
       <Education/>
-      <Experience className="my-44 m-10 ml-28"/>
+      <Experience/>
+      <Projects className="my-44 m-10 ml-28"/>
       <Skills front={front} back={back}/>
       <div className="h-44"></div>
     </main>

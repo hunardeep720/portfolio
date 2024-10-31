@@ -15,22 +15,12 @@ function Education() {
       <p className="text-xl font-bold grid sm:justify-start text-slate-300">
         Diploma In Software Development
       </p>
-      <p className="text-xl font-bold hidden sm:grid">
+      <p className="text-xl font-bold hidden sm:grid italic">
         January 2022- September 2024
       </p>
-      <p className="text-xl font-bold col-span-full sm:hidden">
+      <p className="text-xl font-bold col-span-full sm:hidden italic">
         January 2022- September 2024
       </p>
-      {/* <ul className="col-span-full text-start text-xl gap-7 pt-3 grid ">
-        <li>
-          <p className="pr-3 text-slate-300 mb-3">Relevant Coursework:</p>Data
-          Structures, Algorithms, Web Development, Database Management
-        </li>
-        <li>
-          <p className="pr-3 text-slate-300 mb-3">Projects:</p>Developed a
-          full-stack web application for project management
-        </li>
-      </ul> */}
     </div>
   );
 }

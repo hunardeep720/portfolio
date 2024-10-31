@@ -15,7 +15,7 @@ function Navbar() {
         </Link>
       </div>
       <div>
-      <Link href="/#experience">
+      <Link href="/#projects">
           <p className="font-extrabold text-lg sm:text-4xl hover:text-slate-300">Projects</p>
         </Link>
       </div>
