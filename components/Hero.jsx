@@ -1,79 +1,76 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { IoCall } from "react-icons/io5";
 import { MdEmail } from "react-icons/md";
-import { FaGithub } from "react-icons/fa6";
-import { FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 export default function Hero() {
   return (
-    <div
+    <section
       id="home"
-      className=" max-w-screen-xl mx-auto m-10 text-white bg-black pt-24 sm:pt-40 sm:ml-28 ml-4 grid sm:grid-cols-2"
+      className="min-h-screen flex items-center justify-center py-16"
     >
-      <div className="h-full w-full grid items-end">
-        {" "}
-        <h1 className="text-2xl font-extrabold sm:text-5xl text-cyan-300">
+      <div className="text-center">
+        {/* Profile Image */}
+        {/* <div className="mb-8 flex justify-center">
+          <Image
+            src="/images/profile/IMG_2240.jpeg"
+            alt="Hunardeep Singh"
+            width={200}
+            height={200}
+            className="rounded-full border-4 border-primary"
+          />
+        </div> */}
+
+        {/* Name and Introduction */}
+        <h1 className="text-4xl sm:text-6xl font-bold text-heading mb-4">
           Hunardeep Singh
         </h1>
-        <p className="font-bold text-lg mt-6 text-cyan-200">
-          I’m a
-          <span className="text-cyan-500">
-            {" "}full-stack{" "}
-          </span>
-          and
-          <span className="text-cyan-500">
-          {" "}mobile developer{" "}
-          </span>
-          , skilled in building
-          <span className="text-cyan-500">
-          {" "}responsive web{" "}
-          </span>
-          and
-          <span className="text-cyan-500">
-          {" "}mobile applications{" "}
-          </span>
-          from
-          <span className="text-cyan-500">
-          {" "}concept to deployment{" "}
-          </span>
-          .
+        <p className="text-lg sm:text-xl text-secondary mb-8 max-w-2xl mx-auto">
+          I'm a <span className="text-primary font-semibold">full-stack</span> and
+          <span className="text-primary font-semibold"> mobile developer</span>, skilled in building
+          <span className="text-primary font-semibold"> responsive web</span> and
+          <span className="text-primary font-semibold"> mobile applications</span> from
+          <span className="text-primary font-semibold"> concept to deployment</span>.
         </p>
-      </div>
 
-      <div className="mt-8 flex flex-col text-xl items-start">
-        <Link href={`tel:8254888028`}>
-          <p className="font-semibold text-cyan-300 hover:text-slate-400 flex items-center gap-2 hover:text-lg">
+        {/* Contact Links */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-lg">
+          <Link
+            href="tel:8254888028"
+            className="flex items-center gap-2 text-text hover:text-primary transition-colors"
+          >
             <IoCall />
             (825)-488-8028
-          </p>
-        </Link>
-        <Link
-          href={`mailto:dhillonhunar@gmail.com`}
-          className="my-3 font-semibold text-cyan-300 hover:text-slate-400 flex items-center gap-2 hover:text-lg"
-        >
-          <MdEmail />
-          DHILLONHUNAR@GMAIL.COM
-        </Link>
-        <div className="flex">
+          </Link>
+          <Link
+            href="mailto:dhillonhunar@gmail.com"
+            className="flex items-center gap-2 text-text hover:text-primary transition-colors"
+          >
+            <MdEmail />
+            dhillonhunar@gmail.com
+          </Link>
+        </div>
+
+        {/* Social Links */}
+        <div className="mt-6 flex justify-center gap-6">
           <Link
             href="https://github.com/hunardeep720"
             target="_blank"
-            className="pr-3 border-r-2 border-black font-semibold hover:text-slate-400 text-cyan-300 flex gap-2 items-center hover:text-lg"
+            className="text-secondary hover:text-primary transition-colors"
           >
-            <FaGithub />
-            GitHub
+            <FaGithub size={24} />
           </Link>
           <Link
-            href="https://www.linkedin.com/in/hunardeep-singh-9a5785269?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BbGDtpMeVRRyJpG107HUDsA%3D%3D"
+            href="https://www.linkedin.com/in/hunardeep-singh-9a5785269"
             target="_blank"
-            className="pl-3 font-semibold text-cyan-300 hover:text-slate-400 flex gap-2 items-center hover:text-lg"
+            className="text-secondary hover:text-primary transition-colors"
           >
-            <FaLinkedin />
-            LinkedIn
+            <FaLinkedin size={24} />
           </Link>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

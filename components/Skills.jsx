@@ -1,93 +1,70 @@
-"use client";
-import React, { useState, createRef } from "react";
-import { useScroll, motion } from "framer-motion";
+"use client"
 
-function Skills({ front, back }) {
-  const [frontierBg, setFrontierBg] = useState("white");
-  const [frontierTxt, setFrontierTxt] = useState("black");
-  const [backendBg, setBackendBg] = useState("black");
-  const [backendTxt, setBackendTxt] = useState("white");
-  const [frontier, setFrontier] = useState(true);
-  const ref2 = createRef(null);
-  const { scrollYProgress } = useScroll({
-    target: ref2.current,
-    offset: [0.4, 1],
-  });
+import React, { useState } from "react"
+import { motion } from "framer-motion"
+
+function Skills({ frontend, backend }) {
+  const [activeTab, setActiveTab] = useState("frontend")
+
+  const tabVariants = {
+    active: { backgroundColor: "#64FFDA", color: "#0A192F" },
+    inactive: { backgroundColor: "transparent", color: "#64FFDA" },
+  }
+
+  const skillVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: (i) => ({
+      opacity: 1,
+      y: 0,
+      transition: { delay: i * 0.1, duration: 0.5 },
+    }),
+  }
+
   return (
-    <div className="mb-44 z-0 max-w-screen-xl mx-auto sm:ml-28">
-      <motion.div
-        ref={ref2}
-        style={{ opacity: scrollYProgress }}
-        id="skills"
-        className="bg-black grid text-white pt-24 sm:pt-40"
-      >
-        <p className="text-3xl font-extrabold border-black border-b-2 mb-10 w-full">
-          Skills
-        </p>
-        <div className="grid grid-cols-2">
-          <p
-            style={{
-              backgroundColor: `${frontierBg}`,
-              color: `${frontierTxt}`,
-            }}
-            onClick={() => {
-              setBackendBg("black");
-              setBackendTxt("white");
-              setFrontierTxt("black");
-              setFrontierBg("white");
-              setFrontier(true);
-            }}
-            className="cursor-pointer p-3 sm:px-32 text-2xl font-bold"
+    <section id="skills" className="py-16">
+      <h2 className="text-3xl font-bold mb-8 text-heading">Skills</h2>
+      <div className="bg-lightBackground rounded-lg p-6 shadow-lg">
+        <div className="flex mb-6">
+          <motion.button
+            variants={tabVariants}
+            animate={activeTab === "frontend" ? "active" : "inactive"}
+            onClick={() => setActiveTab("frontend")}
+            className="flex-1 py-2 px-4 rounded-l-lg font-semibold"
           >
-            Frontier
-          </p>
-          <p
-            style={{ backgroundColor: `${backendBg}`, color: `${backendTxt}` }}
-            onClick={() => {
-              setFrontierBg("black");
-              setFrontierTxt("white");
-              setBackendBg("white");
-              setBackendTxt("black");
-              setFrontier(false);
-            }}
-            className="cursor-pointer p-3 sm:px-32 text-2xl font-bold"
+            Frontend
+          </motion.button>
+          <motion.button
+            variants={tabVariants}
+            animate={activeTab === "backend" ? "active" : "inactive"}
+            onClick={() => setActiveTab("backend")}
+            className="flex-1 py-2 px-4 rounded-r-lg font-semibold"
           >
             Backend
-          </p>
-          <div
-            className={frontier ? "col-span-full m-3 mt-10 gap-8" : "hidden"}
-          >
-            <ul className="grid grid-cols-1">
-              {front.map((skill, index) => (
-                <li
-                  className="p-4 text-xl font-semibold shadow-xl cursor-not-allowed grid grid-cols-2 my-3"
-                  key={index}
-                >
-                  {skill.name}
-                  <p>{skill.year}</p>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div
-            className={!frontier ? "col-span-full m-3 mt-10 gap-8" : "hidden"}
-          >
-            <ul className="grid grid-cols-1">
-              {back.map((skill, index) => (
-                <li
-                  className="p-4 text-xl font-semibold shadow-xl cursor-not-allowed grid grid-cols-2 my-3"
-                  key={index}
-                >
-                  {skill.name}
-                  <p>{skill.year}</p>
-                </li>
-              ))}
-            </ul>
-          </div>
+          </motion.button>
         </div>
-      </motion.div>
-    </div>
-  );
+        <motion.div
+          key={activeTab}
+          initial="hidden"
+          animate="visible"
+          variants={{ visible: { transition: { staggerChildren: 0.1 } } }}
+          className="grid grid-cols-1 sm:grid-cols-2 gap-4"
+        >
+          {(activeTab === "frontend" ? frontend : backend).map((skill, index) => (
+            <motion.div
+              key={skill.name}
+              custom={index}
+              variants={skillVariants}
+              className="bg-background p-4 rounded-lg flex justify-between items-center"
+            >
+              <span className="text-primary">{skill.name}</span>
+              <span className="text-secondary">{skill.year}</span>
+            </motion.div>
+          ))}
+        </motion.div>
+      </div>
+    </section>
+  )
 }
 
-export default Skills;
+export default Skills
+
