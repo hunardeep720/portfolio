@@ -2,7 +2,7 @@ import Hero from "../../components/Hero";
 import Education from "../../components/Education";
 import Projects from "../../components/Projects";
 import Skills from "../../components/Skills";
-import GitHubSection from "../../components/GitHubSection";
+import GitHubSection from "../../components/GithubSection";
 
 export default function Home() {
   const frontendSkills = [
