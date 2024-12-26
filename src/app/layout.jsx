@@ -1,28 +1,20 @@
-import { Inter } from "next/font/google";
-import "./globals.css";
-import Navbar from "../../components/Navbar";
-import StyledBackground from "../../components/StyledBackground";
+import './globals.css'
+import { Inter } from 'next/font/google'
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-});
+const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: "Hunardeep Singh - Portfolio",
-  description: "Full-stack and mobile developer portfolio",
-};
-
-export default function RootLayout({ children }) {
-  return (
-    <html lang="en" className={`${inter.variable} font-sans scroll-smooth`}>
-      <body className="bg-background text-text relative">
-        <StyledBackground />
-        <Navbar />
-        <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {children}
-        </main>
-      </body>
-    </html>
-  );
+  title: 'Hunardeep Singh | Software Developer',
+  description: 'Portfolio of Hunardeep, a passionate software developer',
 }
+
+export default function RootLayout({
+  children,
+}) {
+  return (
+    <html lang="en" className="scroll-smooth">
+      <body className={`${inter.className} bg-gray-100 text-gray-900`}>{children}</body>
+    </html>
+  )
+}
+
