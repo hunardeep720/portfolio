@@ -1,76 +1,43 @@
-import React from "react";
-import Link from "next/link";
-import Image from "next/image";
-import { IoCall } from "react-icons/io5";
-import { MdEmail } from "react-icons/md";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { ArrowDown } from "lucide-react";
 
-export default function Hero() {
+const Hero = () => {
   return (
-    <section
-      id="home"
-      className="min-h-screen flex items-center justify-center py-16"
-    >
-      <div className="text-center">
-        {/* Profile Image */}
-        {/* <div className="mb-8 flex justify-center">
-          <Image
-            src="/images/profile/IMG_2240.jpeg"
-            alt="Hunardeep Singh"
-            width={200}
-            height={200}
-            className="rounded-full border-4 border-primary"
-          />
-        </div> */}
-
-        {/* Name and Introduction */}
-        <h1 className="text-4xl sm:text-6xl font-bold text-heading mb-4">
-          Hunardeep Singh
-        </h1>
-        <p className="text-lg sm:text-xl text-secondary mb-8 max-w-2xl mx-auto">
-          I'm a <span className="text-primary font-semibold">full-stack</span> and
-          <span className="text-primary font-semibold"> mobile developer</span>, skilled in building
-          <span className="text-primary font-semibold"> responsive web</span> and
-          <span className="text-primary font-semibold"> mobile applications</span> from
-          <span className="text-primary font-semibold"> concept to deployment</span>.
-        </p>
-
-        {/* Contact Links */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-lg">
-          <Link
-            href="tel:8254888028"
-            className="flex items-center gap-2 text-text hover:text-primary transition-colors"
-          >
-            <IoCall />
-            (825)-488-8028
-          </Link>
-          <Link
-            href="mailto:dhillonhunar@gmail.com"
-            className="flex items-center gap-2 text-text hover:text-primary transition-colors"
-          >
-            <MdEmail />
-            dhillonhunar@gmail.com
-          </Link>
-        </div>
-
-        {/* Social Links */}
-        <div className="mt-6 flex justify-center gap-6">
-          <Link
-            href="https://github.com/hunardeep720"
-            target="_blank"
-            className="text-secondary hover:text-primary transition-colors"
-          >
-            <FaGithub size={24} />
-          </Link>
-          <Link
-            href="https://www.linkedin.com/in/hunardeep-singh-9a5785269"
-            target="_blank"
-            className="text-secondary hover:text-primary transition-colors"
-          >
-            <FaLinkedin size={24} />
-          </Link>
+    <section className="h-screen flex items-center justify-center relative overflow-hidden">
+      <video
+        autoPlay
+        loop
+        muted
+        className="absolute w-full h-full object-cover"
+      >
+        <source src="/video/backgroundVideo.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div className="absolute inset-0 bg-black opacity-50"></div>
+      <div className="relative z-10">
+        <div className="text-center text-white [&_span]:text-shadow-sm [&_span]:shadow-black/50">
+          <h1 className="text-5xl font-bold mb-4">Hunardeep Singh</h1>
+          <h2 className="text-3xl mb-6 px-4 sm:px-6 md:px-8 lg:px-10">
+            I'm a versatile{" "}
+            <span className="font-semibold text-yellow-300">Full-Stack</span>{" "}
+            and{" "}
+            <span className="font-semibold text-yellow-300">
+              Mobile Developer
+            </span>{" "}
+            with a passion for transforming ideas into seamless, responsive web
+            and mobile applications.From conceptualization to deployment, I
+            specialize in delivering user-centric solutions that blend{" "}
+            <span className="font-semibold text-yellow-300">functionality</span>
+            , <span className="font-semibold text-yellow-300">scalability</span>
+            , and{" "}
+            <span className="font-semibold text-yellow-300">innovation</span>.
+          </h2>
+          <a href="#about" className="inline-block animate-bounce">
+            <ArrowDown size={32} />
+          </a>
         </div>
       </div>
     </section>
   );
-}
+};
+
+export default Hero;
