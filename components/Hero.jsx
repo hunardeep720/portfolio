@@ -9,7 +9,7 @@ const Hero = () => {
         muted
         className="absolute w-full h-full object-cover"
       >
-        <source src="/video/backgroundVideo.mp4" type="video/mp4" />
+        <source src="https://firebasestorage.googleapis.com/v0/b/studentscoops-20914.appspot.com/o/restaurant_logo%2FbackgroundVideo.mp4?alt=media&token=f23de927-2e98-40c2-b066-3c8e5f23e7e9" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
       <div className="absolute inset-0 bg-black opacity-50"></div>
