@@ -2,14 +2,17 @@ import { ArrowDown } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section className="h-screen flex items-center justify-center relative overflow-hidden">
+    <section className="h-screen flex flex-col items-center justify-center relative overflow-hidden">
       <video
         autoPlay
         loop
         muted
         className="absolute w-full h-full object-cover"
       >
-        <source src="https://firebasestorage.googleapis.com/v0/b/studentscoops-20914.appspot.com/o/restaurant_logo%2FbackgroundVideo.mp4?alt=media&token=f23de927-2e98-40c2-b066-3c8e5f23e7e9" type="video/mp4" />
+        <source
+          src="https://firebasestorage.googleapis.com/v0/b/studentscoops-20914.appspot.com/o/restaurant_logo%2FbackgroundVideo.mp4?alt=media&token=f23de927-2e98-40c2-b066-3c8e5f23e7e9"
+          type="video/mp4"
+        />
         Your browser does not support the video tag.
       </video>
       <div className="absolute inset-0 bg-black opacity-50"></div>
@@ -31,10 +34,17 @@ const Hero = () => {
             , and{" "}
             <span className="font-semibold text-yellow-300">innovation</span>.
           </h2>
-          <a href="#about" className="inline-block animate-bounce">
-            <ArrowDown size={32} />
-          </a>
         </div>
+      </div>
+      <div className="absolute bottom-8 flex animate-bounce w-full justify-center">
+        <a href="#about">
+          <ArrowDown
+            size={48}
+            strokeWidth={3}
+            stroke={"yellow"}
+            className="text-yellow-300"
+          />
+        </a>
       </div>
     </section>
   );
