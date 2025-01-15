@@ -17,6 +17,7 @@ const Header = () => {
           <a href="#skills" className="hover:text-blue-600 transition-colors">Skills</a>
           <a href="#projects" className="hover:text-blue-600 transition-colors">Projects</a>
           <a href="#contact" className="hover:text-blue-600 transition-colors">Contact</a>
+          <a href="/resume" className="hover:text-blue-600 transition-colors">Resume</a>
         </nav>
         <button className="md:hidden" onClick={toggleMenu}>
           {isMenuOpen ? <X /> : <Menu />}
@@ -28,6 +29,7 @@ const Header = () => {
           <a href="#skills" className="block py-2 hover:text-blue-600 transition-colors" onClick={toggleMenu}>Skills</a>
           <a href="#projects" className="block py-2 hover:text-blue-600 transition-colors" onClick={toggleMenu}>Projects</a>
           <a href="#contact" className="block py-2 hover:text-blue-600 transition-colors" onClick={toggleMenu}>Contact</a>
+          <a href="/resume" className="block py-2 hover:text-blue-600 transition-colors" onClick={toggleMenu}>Resume</a>
         </nav>
       )}
     </header>

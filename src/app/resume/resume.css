@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-gray-100;
+}
+
+a {
+  @apply transition-colors duration-200;
+}
+
+.list-inside li::marker {
+  color: #3B82F6;
+}
+
