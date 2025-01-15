@@ -4,7 +4,7 @@ import { Download, Linkedin, Github, Globe, ArrowLeft } from "lucide-react";
 
 export default function Resume() {
   const handleDownload = () => {
-    const pdfUrl = "/resume.pdf";
+    const pdfUrl = "/resume/HunardeepSingh_Resume.pdf";
     const link = document.createElement("a");
     link.href = pdfUrl;
     link.download = "HunardeepSingh_Resume.pdf";
@@ -16,7 +16,7 @@ export default function Resume() {
   const goBack = () => {
     window.history.back()
   }
-  
+
   return (
     <div className="bg-white shadow-xl rounded-lg overflow-hidden">
       <div className="p-8">
