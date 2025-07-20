@@ -23,7 +23,8 @@ const projects = [
     title: "Student Scoops",
     description:
       "A platform that reduces food waste by offering discounted surplus food to students.",
-    technologies: "Next.js, JavaScript, Node.js, Firestore Authenticaton including Firebase Admin SDK, Firebase, Google Maps API, Nodemailer",
+    technologies:
+      "Next.js, JavaScript, Node.js, Firestore Authentication, Firebase Admin SDK, Google Maps API, Nodemailer",
     link: "https://studentscoops.vercel.app/",
     github: "https://github.com/Abdelmouzahir/studentscoops.git",
     features: [
@@ -39,7 +40,8 @@ const projects = [
     title: "Deal Hives",
     description:
       "An e-commerce platform developed using Next.js with Firebase authentication and Firestore Database.",
-    technologies: "Next.js, JavaScript, Firestore Authentication, Firebase, Real-Time Amazon Data (Rapid API)",
+    technologies:
+      "Next.js, JavaScript, Firestore Authentication, Firebase, Real-Time Amazon Data (Rapid API)",
     link: "https://deal-hives.vercel.app/",
     github: "https://github.com/hunardeep720/dealHives.git",
     features: [
@@ -56,66 +58,79 @@ const projects = [
 
 const Projects = () => {
   return (
-    <section id="projects" className="py-20 bg-white">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-8 text-center">Projects</h2>
-        <div className="grid grid-cols-1 gap-12">
+    <section
+      id="projects"
+      className="py-20 bg-gradient-to-br from-gray-100 via-white/80 to-yellow-50"
+    >
+      <div className="max-w-5xl mx-auto px-4">
+        <h2 className="text-3xl font-bold mb-8 text-center text-yellow-600">
+          Projects
+        </h2>
+        <div className="grid gap-10">
           {projects.map((project, index) => (
             <div
               key={index}
-              className="bg-gray-100 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow"
+              className="bg-white/80 backdrop-blur-lg rounded-3xl shadow-xl border border-gray-200 overflow-hidden transition-shadow hover:shadow-2xl"
             >
               <div className="md:flex">
-                <div className="md:w-1/3">
-                  {!project.github ? (
+                <div className="md:w-1/3 flex items-stretch justify-center bg-yellow-50">
+                  {project.image ? (
                     <Image
                       src={project.image}
                       alt={project.title}
-                      width={300}
-                      height={200}
-                      className="w-full h-full object-fill object-center"
+                      width={120}
+                      height={120}
+                      className="object-contain rounded-xl shadow-lg my-auto"
                     />
-                  ) : (
+                  ) : project.link ? (
                     <iframe
                       src={project.link}
-                     width="100%" height="400"
-                     allowFullScreen={true}
-                    ></iframe>
+                      title={project.title}
+                      className="w-full h-full min-h-[320px] rounded-xl border border-yellow-200 shadow-lg"
+                      loading="lazy"
+                      style={{ background: "#fff" }}
+                    />
+                  ) : (
+                    <div className="flex items-center justify-center w-full h-full">
+                      <span className="text-gray-400 italic">No image</span>
+                    </div>
                   )}
                 </div>
-                <div className="p-6 md:w-2/3">
-                  <h3 className="text-2xl font-semibold mb-2">
+                <div className="p-6 md:w-2/3 flex flex-col justify-center">
+                  <h3 className="text-2xl font-semibold mb-2 text-yellow-600">
                     {project.title}
                   </h3>
-                  <p className="text-gray-600 mb-4">{project.description}</p>
+                  <p className="text-gray-700 mb-3">{project.description}</p>
                   <p className="text-sm text-gray-500 mb-4">
                     <strong>Technologies:</strong> {project.technologies}
                   </p>
-                  <div className="flex space-x-4 mb-4">
+                  <div className="flex flex-wrap gap-4 mb-4">
                     <a
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center text-blue-600 hover:text-blue-800"
+                      className="flex items-center bg-yellow-100 hover:bg-yellow-200 text-blue-600 rounded-full px-3 py-1 transition-colors shadow border border-yellow-200"
                     >
-                      <ExternalLink size={20} className="mr-1" />{" "}
-                      {project.github ? "Visit" : "Company"}
+                      <ExternalLink size={18} className="mr-1" />
+                      {project.github ? "Live" : "Company"}
                     </a>
                     {project.github && (
                       <a
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center text-gray-600 hover:text-gray-800"
+                        className="flex items-center bg-gray-100 hover:bg-yellow-100 text-gray-700 rounded-full px-3 py-1 transition-colors shadow border border-gray-300"
                       >
-                        <Github size={20} className="mr-1" /> GitHub
+                        <Github size={18} className="mr-1" /> GitHub
                       </a>
                     )}
                   </div>
-                  <h4 className="font-semibold mb-2">Key Features:</h4>
+                  <h4 className="font-semibold mb-2 text-yellow-600">
+                    Key Features:
+                  </h4>
                   <ul className="list-disc list-inside mb-4">
                     {project.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="text-sm text-gray-600">
+                      <li key={featureIndex} className="text-sm text-gray-700">
                         {feature}
                       </li>
                     ))}
